@@ -13,7 +13,33 @@
         <!-- Add your extensions here -->
     </extensions>
 
+    <!-- https://plugins.jetbrains.com/docs/intellij/basic-action-system.html#registering-actions-in-pluginxml -->
     <actions>
-        <!-- Add your actions here -->
+        <group id="com.octo.pluginsample"
+               text="Plugin Sample Actions"
+               description="Plugin sample actions"
+               popup="false"
+               compact="false">
+
+            <add-to-group group-id="AnalyzeMenu" anchor="last"/>
+
+            <action id="com.octo.pluginsample.GeneralInfoAction"
+                    class="com.octo.pluginsample.GeneralInfoAction"
+                    text="General Info Action"
+                    description="General info action"
+                    icon="AllIcons.RunConfigurations.RemoteDebug">
+                <synonym text="Display General Info"/>
+            </action>
+        </group>
+
+        <action id="com.octo.pluginsample.SnakeCaseToCamelCaseAction"
+                class="com.octo.pluginsample.SnakeCaseToCamelCaseAction"
+                text="Snake Case Methods to Camel Case"
+                description="Rename snake case methods to camel case"
+                icon="AllIcons.ObjectBrowser.AbbreviatePackageNames">
+            <synonym text="Display Java Info"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="control shift J"/>
+            <add-to-group group-id="RefactoringMenu" anchor="last"/>
+        </action>
     </actions>
 </idea-plugin>
