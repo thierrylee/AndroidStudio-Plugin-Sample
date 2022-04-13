@@ -4,7 +4,7 @@ plugins {
     java
 }
 
-group = "org.example"
+group = "com.octo.pluginsample"
 version = "1.0-SNAPSHOT"
 
 repositories {
