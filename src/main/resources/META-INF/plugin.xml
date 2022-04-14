@@ -41,5 +41,14 @@
             <keyboard-shortcut keymap="$default" first-keystroke="control shift J"/>
             <add-to-group group-id="RefactoringMenu" anchor="last"/>
         </action>
+
+        <action id="com.octo.pluginsample.AddActivityBindingPropertyAction"
+                class="com.octo.pluginsample.AddActivityBindingPropertyAction"
+                text="ViewBinding Property"
+                description="Add viewBinding property"
+                icon="AllIcons.RunConfigurations.Remote">
+            <synonym text="Add ViewBinding Property"/>
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
     </actions>
 </idea-plugin>
