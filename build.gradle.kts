@@ -33,9 +33,28 @@ tasks {
     }
 
     patchPluginXml {
+        pluginDescription.set("""
+            A sample developped for testing plugin capabilities  
+        """.trimIndent())
+
         changeNotes.set("""
-            Add change notes here.<br>
-            <em>most HTML tags may be used</em>        """.trimIndent())
+               Initial release
+        """.trimIndent())
+    }
+
+    signPlugin {
+        // Define variables in ~/.gradle/gradle.properties :
+        // - androidStudioPluginSigninCertificate as a file path to signing certificate
+        // - androidStudioPluginSigninPrivateKey as a file path to private key
+        // - androidStudioPluginSigninPrivateKey as a String
+        certificateChain.set(file(project.properties["androidStudioPluginSigninCertificate"].toString()).readText())
+        privateKey.set(file(project.properties["androidStudioPluginSigninPrivateKey"].toString()).readText())
+        password.set(project.properties["androidStudioPluginSigninPassword"].toString())
+    }
+
+    publishPlugin {
+        // Define variable androidStudioPluginPublishToken as Strinig in ~/.gradle/gradle.properties :
+        token.set(project.properties["androidStudioPluginPublishToken"].toString())
     }
 }
 tasks.getByName<Test>("test") {
