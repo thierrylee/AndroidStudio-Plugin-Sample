@@ -34,7 +34,7 @@ tasks {
 
     patchPluginXml {
         pluginDescription.set("""
-            A sample developped for testing plugin capabilities  
+            A sample developped for testing plugin capabilities
         """.trimIndent())
 
         changeNotes.set("""
